@@ -27,6 +27,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded());
 
+app.get("/", (req, res) => {
+  res.send(`
+  <div style="font-size: 50px"> Anh Bảo báo vcl =)))</div>
+  `)
+});
+
 app.get("/api/order/get", (req, res) => {
   const sqlSelect = "SELECT * FROM railway.order_";
   db.query(sqlSelect, (error, result) => {
