@@ -31,6 +31,7 @@ app.get("/api/order/get", (req, res) => {
   const sqlSelect = "SELECT * FROM railway.order_";
   db.query(sqlSelect, (error, result) => {
     console.log(result);
+    res.send(result)
   });
 });
 
